@@ -39,6 +39,8 @@ var ittyPrev = function() {
 };
 
 var ittySlide = function(slideID) {
+	if (slideID < 0) slideID += i;
+	slideID = slideID % i;
 	$('.itty-slider').attr('data-itty-slide', slideID);
 	$('.itty-slider').css('margin-left',
 			(-1.007 * slideID * parseInt($('.itty-slide').css('width'))) + "px");
